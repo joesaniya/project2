@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hami_swap/homepage.dart';
+
+import 'screens/drawerscreen.dart';
+import 'screens/homescreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,5 +20,23 @@ class MyApp extends StatelessWidget {
         ),
         // home: MyHome()
         home: const HomePage());
+  }
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [DrawerScreen(), HomeScreen()],
+      ),
+    );
   }
 }
